@@ -30,7 +30,7 @@ const Login = () => {
     const encryptedData = encryptData(data);
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`,  { data: encryptedData });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`,  { data: encryptedData });
       response.data = decryptData(response.data)
       if (response.data.error) {
         setError(response.data.error.message);
